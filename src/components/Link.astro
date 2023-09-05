@@ -1,0 +1,4 @@
+---
+const { href, external, text } = Astro.props
+---
+<a href={href} target={external ? '_blank' : ''} class="text-sky-600 hover:underline">{text}</a>

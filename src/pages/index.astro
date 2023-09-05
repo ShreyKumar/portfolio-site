@@ -1,15 +1,22 @@
 ---
+import Navigation from '@components/Navigation.jsx'
+import MetaHeaders from '@components/MetaHeaders.astro'
+import profilePic from '@assets/profilepic.jpg'
+import Link from '@components/Link.astro';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
+	<MetaHeaders title="Home | ShreyKumar.com" />
 	<body>
-		<h1>Astro</h1>
+    <Navigation page='Home' client:media="(max-width: 639px)" />
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 md:mt-40 mt-8">
+        <div class="flex md:flex-row flex-col">
+          <div class="md:mr-32 flex-1 md:mt-10">
+            <h1 class="md:text-5xl text-4xl mb-10">Hey, hows it going?! 😄👋</h1>
+            <p class="mb-8">My name is Shrey, welcome to my site! I'm a Software Developer 👨‍💻 currently at <Link href="https://orium.com/" text="Orium" external /> with 4+ years of experience. On the side, I love to help and mentor people 🤝 at <Link href="https://www.wizco.io/" text="Wizco" external />, <Link href="https://www.youthfully.ca/" external text="Youthfully" /> and <Link href="https://careerfoundry.com/" external text="CareerFoundry" />. I'm also an avid hiker 🥾, <Link href="https://www.strava.com/athletes/103295391" external text="runner" /> 🏃‍♂️💨 and Stoic philosopher 🧐. Feel free to send me a connection request on <Link href="https://www.linkedin.com/in/shreykumar/" external text="LinkedIn" /> or follow me on <Link href="https://github.com/ShreyKumar" external text="Github" />.</p>
+            <a href="/experience" class="md:hidden mb-8 inline-block">Click here to learn more about my work experience</a>
+          </div>
+          <img src={profilePic} alt="" class="md:rounded-none md:w-96 md:mx-0 w-40 mx-auto rounded-full">
+      </div>
 	</body>
 </html>
